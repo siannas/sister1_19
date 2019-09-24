@@ -32,7 +32,7 @@ class GreetServer(object):
 
     def do_create(self, filename, text):
         if filename is None or filename == "":
-            return "Filename is not defined"
+            return "Nama File tidak terdefinisi"
         try:
             with open(filename, 'x') as file:
                 file.write(text)
@@ -42,7 +42,7 @@ class GreetServer(object):
 
     def do_read(self, filename):
         if filename is None or filename == "":
-            return "Filename is not defined"
+            return "Nama File tidak terdefinisi"
         try:
             with open(filename, 'r') as file:
                 return file.read()
@@ -51,7 +51,7 @@ class GreetServer(object):
 
     def do_update(self, filename, text):
         if filename is None or filename == "":
-            return "Filename is not defined"
+            return "Nama File tidak terdefinisi"
         try:
             with open(filename, 'x') as file:
                 file.write(text)
@@ -61,7 +61,7 @@ class GreetServer(object):
 
     def do_delete(self, filename):
         if filename is None or filename == "":
-            return "Filename is not defined"
+            return "Nama File tidak terdefinisi"
         try:
             os.remove(filename)
             return "{} deleted".format(filename)
