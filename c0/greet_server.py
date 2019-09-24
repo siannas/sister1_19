@@ -1,6 +1,5 @@
-from c0.greet import  *
+from c0.greet import *
 import Pyro4
-
 
 def start_without_ns():
     daemon = Pyro4.Daemon()
