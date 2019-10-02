@@ -10,23 +10,25 @@ switcher = {
 
 def method_selector(tipe):
     method = "do_" + switcher.get(tipe)
+    # print(method)
+    # print(type(tipe))
     method_to_call = getattr(gserver, method)
 
-    if type == "1":
+    if tipe == 1:
         filename = input("Nama File : ")
         text = input("Konten : ")
         print(method_to_call(filename, text))
-    elif type == "2":
+    elif tipe == 2:
         filename = input("Nama File : ")
         print(method_to_call(filename))
-    elif type == "3":
+    elif tipe == 3:
         filename = input("Nama File : ")
         text = input("Konten : ")
         print(method_to_call(filename, text))
-    elif type == "4":
+    elif tipe == 4:
         filename = input("Nama File : ")
         print(method_to_call(filename))
-    elif type == "5":
+    elif tipe == 5:
         directory = input("Direktori : ")
         print(method_to_call(directory))
 
