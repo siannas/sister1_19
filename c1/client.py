@@ -24,17 +24,20 @@ def method_selector(tipe):
     if tipe == 1:
         filename = input("Nama File : ")
         text = input("Konten : ")
-        print(method_to_call(filename, text))
+        f.ConsistencyMethod(method, filename, text)
+        # print(method_to_call(filename, text))
     elif tipe == 2:
         filename = input("Nama File : ")
         print(method_to_call(filename))
     elif tipe == 3:
         filename = input("Nama File : ")
         text = input("Konten : ")
-        print(method_to_call(filename, text))
+        f.ConsistencyMethod(method, filename, text)
+        # print(method_to_call(filename, text))
     elif tipe == 4:
         filename = input("Nama File : ")
-        print(method_to_call(filename))
+        f.ConsistencyMethod(method, filename, "")
+        # print(method_to_call(filename))
     elif tipe == 5:
         directory = input("Direktori : ")
         print(method_to_call(directory))

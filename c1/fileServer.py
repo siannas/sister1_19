@@ -1,3 +1,4 @@
+import Pyro4
 import random
 import os
 import glob
@@ -76,6 +77,19 @@ class FileServer(object):
         except Exception as e:
             return e
 
+    def ConsistencyMethod(self, method, filename, text):
+        nama_datastore = "datastore"
+        uri = "PYRONAME:{}@localhost:7777".format(nama_datastore)
+        fserver = Pyro4.Proxy(uri)
+        if method == "do_create":
+            method_to_call = getattr(fserver, "createAll")
+            method_to_call(filename, text)
+        elif method == "do_delete":
+            method_to_call = getattr(fserver, "deleteAll")
+            method_to_call(filename)
+        elif method == "do_update":
+            method_to_call = getattr(fserver, "updateAll")
+            method_to_call(filename, text)
 
 if __name__ == '__main__':
     k = FileServer()
